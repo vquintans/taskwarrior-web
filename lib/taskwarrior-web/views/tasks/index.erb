@@ -1,4 +1,4 @@
-<% can_edit = @can_edit && params[:status].in?(['pending', 'waiting']) %>
+<% can_edit = @can_edit && params[:status].in?(['pending', 'waiting', 'recurring']) %>
 <% priority_map = { nil => 0, 'L' => 1, 'M' => -1, 'H' => -2 } %>
 
 <div id="listing">
@@ -26,6 +26,7 @@
           %>
           <th>Tags</th>
           <th data-sort-map='{"H": 0, "M": 1, "": 2, "L": 3}'>Priority</th>
+	  <th>Recurrence</th>
           <% if can_edit %><th class="no-sort"></th><% end %>
         </tr>
       </thead>
@@ -37,6 +38,7 @@
             <% end %>
             <td>
               <%= format_description(task.description) %>
+              <%# <%= auto_link(task.description) %> %>
               <% unless task.annotations.empty? %>
                 <ul>
                   <% task.annotations.each do |annotation| %>
@@ -63,6 +65,7 @@
             %>
             <td class='tags'><%= format_tags(task.tags) unless task.tags.nil? %></td>
             <td><%= task.priority unless task.priority.nil? %></td>
+            <td><%= task.recur unless task.recur.nil? %></td>
             <% if can_edit %><td><%= crud_links(task) %></td><% end %>
           </tr>
         <% end %>

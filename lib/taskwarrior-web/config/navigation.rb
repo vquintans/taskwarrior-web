@@ -1,4 +1,4 @@
-SimpleNavigation::Configuration.run do |navigation|  
+SimpleNavigation::Configuration.run do |navigation|
   navigation.selected_class = 'active'
 
   navigation.items do |primary|
@@ -6,6 +6,7 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :tasks, 'Tasks', url('/tasks') do |tasks|
       tasks.dom_class = 'nav nav-pills'
       tasks.item :pending, "Pending <span class=\"badge\">#{task_count}</span>", url('/tasks/pending')
+      tasks.item :recurring, 'Recurring', url('/tasks/recurring')
       tasks.item :waiting, 'Waiting', url('/tasks/waiting')
       tasks.item :completed, 'Completed', url('/tasks/completed')
       tasks.item :deleted, 'Deleted', url('/tasks/deleted')
@@ -14,5 +15,6 @@ SimpleNavigation::Configuration.run do |navigation|
       projects.dom_class = 'nav nav-pills'
       projects.item :overview, 'Overview', url('/projects/overview')
     end
+    primary.item :ical, 'ICal export', '/tasks/ical/due'
   end
 end
