@@ -68,6 +68,9 @@ It uses [Vegas](https://github.com/quirkey/vegas/) to make the Sinatra app into
 an executable, so all options for Vegas are valid for `task-web`. Type
 `task-web -h` for more options.
 
+` bundle exec rackup config.ru`
+
+
 ## Features
 
 The current featureset includes:
