@@ -7,9 +7,13 @@ module TaskwarriorWeb::App::Helpers
   end
 
   def format_tags(tags)
-    tags.join(', ')
+    tags.map{|tag| "<a href='javascript:void(1);' onclick='addTag(\"#{tag}\")'>#{tag}</a>"}.join(', ')
   end
 
+  def format_description(description)
+    description.gsub(/(https?:\/\/\S*)/, "<a href='\\1'>\\1</a>")
+  end
+  
   def colorize_date(timestamp)
     return if timestamp.nil?
     due_def = (TaskwarriorWeb::Config.due || 7).to_i

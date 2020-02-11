@@ -4,13 +4,13 @@
     <title><%= @title %> | TaskwarriorWeb</title>
 
     <!-- Styles -->
-    <% %w(bootstrap.min datepicker styles).each do |file| %>
-      <link rel="stylesheet" href="<%= url_for("/css/#{file}.css") %>">
+    <% %w(bootstrap.min datepicker styles jquery.tagsinput.min).each do |file| %>
+      <link rel="stylesheet" href="<%= url("/css/#{file}.css") %>">
     <% end %>
 
     <!-- Scripts -->
-    <% %w(jquery.min bootstrap bootstrap-datepicker jquery.hotkeys jquery.dataTables.min tinycon.min application).each do |file| %>
-      <script text="text/javascript" src="<%= url_for("/js/#{file}.js") %>"></script>
+    <% %w(jquery.min bootstrap bootstrap-datepicker jquery.hotkeys jquery.dataTables.min tinycon.min jquery.tagsinput.min application).each do |file| %>
+      <script text="text/javascript" src="<%= url("/js/#{file}.js") %>"></script>
     <% end %>
   </head>
 
