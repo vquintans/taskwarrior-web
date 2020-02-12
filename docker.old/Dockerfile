@@ -6,7 +6,7 @@ RUN apk add --no-cache task ruby python \
             make \
             g++
 
-COPY docker/.taskrc /root/.taskrc
+COPY docker.old/.taskrc /root/.taskrc
 COPY lib /opt/app/lib
 COPY bin /opt/app/bin
 COPY taskwarrior-web.gemspec LICENSE README.md /opt/app/

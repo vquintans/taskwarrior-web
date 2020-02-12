@@ -4,7 +4,7 @@ services:
   app:
     build:
       context: .
-      dockerfile: docker/Dockerfile
+      dockerfile: docker.old/Dockerfile
     ports:
     - 5678:5678
     volumes:
