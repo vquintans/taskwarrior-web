@@ -1,4 +1,4 @@
-IMAGE_NAME=zebradil/taskwarrior-web-demo
+IMAGE_NAME=taskwarrior-web:demo
 
 build:
 	docker build . -t $(IMAGE_NAME)
