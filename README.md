@@ -19,9 +19,9 @@ Check out the [Live Demo](http://35.196.114.51).
 * [Reporting Bugs](#reporting-bugs)
 * [Marginalia](#marginalia)
 
-## Screenshots
+<!-- ## Screenshots -->
 
-### Pending Tasks
+<!-- ### Pending Tasks
 <img src="https://raw.githubusercontent.com/theunraveler/taskwarrior-web/master/docs/img/readme/pending_tasks_list.jpg">
 
 ### Waiting Tasks
@@ -40,7 +40,7 @@ Check out the [Live Demo](http://35.196.114.51).
 <img src="https://raw.githubusercontent.com/theunraveler/taskwarrior-web/master/docs/img/readme/projects_overview.jpg">
 
 ### Help Popup
-<img src="https://raw.githubusercontent.com/theunraveler/taskwarrior-web/master/docs/img/readme/help_popup.jpg">
+<img src="https://raw.githubusercontent.com/theunraveler/taskwarrior-web/master/docs/img/readme/help_popup.jpg"> -->
 
 ## Requirements
 
@@ -96,11 +96,11 @@ This approach requires [docker](https://www.docker.com) and
 The command below builds new image from the source and runs service.
 
 ```sh
-make run
+docker build -t taskwarrior-web:lastest .
 ```
 
 By default task-web is listening on `5678` port.
-Adjust service configuration in `docker/docker-compose.yml`.
+Adjust service configuration in the `DockerFile`.
 
 
 ## Reporting Bugs
